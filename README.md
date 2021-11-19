@@ -79,6 +79,15 @@ curl http://localhost:8080/pets/searchByName/Zuko
 
 curl http://localhost:8080/pets/deletePet/1
 
+curl -i -X POST http://localhost:8080/pets/filterByAge -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "petAge=2"
+
+curl -i -X POST http://localhost:8080/pets/filterByType -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "petType=Cat"
+
+curl -i -X POST http://localhost:8080/pets/addPet -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "pet_id=10&pet_name=Momo&pet_type=Moth&pet_age=1"
+
+curl -X POST http://localhost:8080/pets/addPet -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "pet_id=10&pet_name=Momo&pet_type=Moth&pet_age=1"
+
+
 
 curl http://localhost:8080/petTypes
 
@@ -88,3 +97,6 @@ curl http://localhost:8080/petTypes/getPetType/1
 
 curl http://localhost:8080/petTypes/deletePetType/2
 
+curl -i -X POST http://localhost:8080/petTypes/addPetType -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "id=7&type='Duck'"
+
+curl -i -X POST http://localhost:8080/petTypes/updatePetType -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "id=7&type='Crocodile'"
