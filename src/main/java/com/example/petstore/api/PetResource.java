@@ -113,9 +113,9 @@ public class PetResource {
 
 		List<Pet> filteredPets = new ArrayList<Pet>();
 
-		Pet pet = new Pet();
 		for (int i = 0;i<pets.size();i++){
 			if(petAge == pets.get(i).getPetAge()){
+				Pet pet = new Pet();
 				pet.setPetId(pets.get(i).getPetId());
 				pet.setPetAge(pets.get(i).getPetAge());
 				pet.setPetName(pets.get(i).getPetName());
@@ -140,9 +140,9 @@ public class PetResource {
 
 		List<Pet> filteredPets = new ArrayList<Pet>();
 
-		Pet pet = new Pet();
 		for (int i = 0;i<pets.size();i++){
 			if(petType.equals(pets.get(i).getPetType())){
+				Pet pet = new Pet();
 				pet.setPetId(pets.get(i).getPetId());
 				pet.setPetAge(pets.get(i).getPetAge());
 				pet.setPetName(pets.get(i).getPetName());
