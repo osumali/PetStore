@@ -65,7 +65,7 @@ If you want to learn more about building native executables, please consult http
 
 ## Deploying Application
 
-<!-- To deploy the demo app on a docker-compose please visit [./deploy](https://github.com/rasika/petstore/tree/master/deploy) -->
+To deploy the demo app on a docker-compose please visit [./deploy](https://github.com/osumali/PetStore/tree/master/deploy)
 
 ## Running the Test Suit
 
