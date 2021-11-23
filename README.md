@@ -69,34 +69,69 @@ If you want to learn more about building native executables, please consult http
 
 ## Curl Commands
 
-curl http://localhost:8080/pets
+### Pet Resource
 
-curl http://localhost:8080/pets/getPets
+Initialize the pets 
+    
+    curl http://localhost:8080/pets
 
-curl http://localhost:8080/pets/getPet/5
+Get all existing pets
 
-curl http://localhost:8080/pets/searchByName/Zuko
+    curl http://localhost:8080/pets/getPets
 
-curl http://localhost:8080/pets/deletePet/1
+Get pet of ID: '5'
 
-curl -i -X POST http://localhost:8080/pets/filterByAge -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "petAge=2"
+    curl http://localhost:8080/pets/getPet/5
 
-curl -i -X POST http://localhost:8080/pets/filterByType -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "petType=Cat"
+Get pet of name 'Zuko'
 
-curl -i -X POST http://localhost:8080/pets/addPet -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "pet_id=10&pet_name=Momo&pet_type=Moth&pet_age=1"
+    curl http://localhost:8080/pets/searchByName/Zuko
 
-curl -X POST http://localhost:8080/pets/addPet -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "pet_id=10&pet_name=Momo&pet_type=Moth&pet_age=1"
+Delete pet of ID: '1'
+
+    curl http://localhost:8080/pets/deletePet/1
 
 
+Filter out all the pets of age '2'
 
-curl http://localhost:8080/petTypes
+    curl -i -X POST http://localhost:8080/pets/filterByAge -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "petAge=2"
 
-curl http://localhost:8080/petTypes/getPetTypes
 
-curl http://localhost:8080/petTypes/getPetType/1
+Filter out all pets of type 'Cat'
 
-curl http://localhost:8080/petTypes/deletePetType/2
+    curl -i -X POST http://localhost:8080/pets/filterByType -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "petType=Cat"
 
-curl -i -X POST http://localhost:8080/petTypes/addPetType -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "id=7&type='Duck'"
+Add pet with ID: 10, name: 'Momo', type: 'Moth', and age: 1
 
-curl -i -X POST http://localhost:8080/petTypes/updatePetType -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "id=7&type='Crocodile'"
+    curl -i -X POST http://localhost:8080/pets/addPet -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "pet_id=10&pet_name=Momo&pet_type=Moth&pet_age=1"
+
+Update pet with ID: 10, to have it's name as Momo, type as Moth, and age as 2
+
+    curl -X POST http://localhost:8080/pets/updatePet -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "pet_id=10&pet_name=Momi&pet_type=Moth&pet_age=2"
+
+
+### PetType Resource
+
+Initialize the pet types
+
+    curl http://localhost:8080/petTypes
+
+Get all existing pet types
+
+    curl http://localhost:8080/petTypes/getPetTypes
+
+Get pet type of ID: 1
+
+    curl http://localhost:8080/petTypes/getPetType/1
+
+Delete pet type of ID: 2
+
+    curl http://localhost:8080/petTypes/deletePetType/2
+
+Add pet type with ID: 7 and name 'Duck'
+
+    curl -i -X POST http://localhost:8080/petTypes/addPetType -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "id=7&type='Duck'"
+
+Update pet type with ID: 7 to have the name 'Crocodile'
+
+    curl -i -X POST http://localhost:8080/petTypes/updatePetType -H "Authorization:OAuth MyToken" -H "Content-Type: application/x-www-form-urlencoded" -d "id=7&type='Crocodile'"
