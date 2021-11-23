@@ -67,6 +67,12 @@ If you want to learn more about building native executables, please consult http
 
 <!-- To deploy the demo app on a docker-compose please visit [./deploy](https://github.com/rasika/petstore/tree/master/deploy) -->
 
+## Running the Test Suit
+
+The below command could be used to run the unit tests.
+
+    ./gradlew test
+
 ## Curl Commands
 
 ### Pet Resource
@@ -79,15 +85,15 @@ Get all existing pets
 
     curl http://localhost:8080/pets/getPets
 
-Get pet of ID: '5'
+Get the pet of ID: '5'
 
     curl http://localhost:8080/pets/getPet/5
 
-Get pet of name 'Zuko'
+Get the pet of name 'Zuko'
 
     curl http://localhost:8080/pets/searchByName/Zuko
 
-Delete pet of ID: '1'
+Delete the pet of ID: '1'
 
     curl http://localhost:8080/pets/deletePet/1
 
